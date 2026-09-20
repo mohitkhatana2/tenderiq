@@ -1,0 +1,14 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: tenderiq
+      POSTGRES_USER: tenderiq
+      POSTGRES_PASSWORD: tenderiq_local
+    ports:
+      - "5432:5432"
+    volumes:
+      - tenderiq_data:/var/lib/postgresql/data
+
+volumes:
+  tenderiq_data:
